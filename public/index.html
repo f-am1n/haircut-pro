@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HairCut Pro — подбор причёски по лицу</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>✂️ HairCut <span>Pro</span></h1>
+  <p>Загрузи фото лица — получи тип лица, трети, факты и подходящие причёски.</p>
+</header>
+
+<main>
+  <section class="card" id="upload">
+    <div class="drop" id="drop">
+      <input type="file" id="file" accept="image/*" hidden>
+      <div id="dropText"><b>Перетащи фото</b> или нажми для выбора<br><small>Анфас, лицо открыто, волосы убраны со лба, хороший свет</small></div>
+      <canvas id="canvas" hidden></canvas>
+    </div>
+    <div class="row">
+      <label>Пол:
+        <select id="gender"><option value="male">Мужской</option><option value="female">Женский</option></select>
+      </label>
+      <button id="analyze" disabled>Анализировать</button>
+    </div>
+    <p id="status" class="muted"></p>
+  </section>
+
+  <div id="results" hidden>
+    <section class="card">
+      <h2>1. Тип лица</h2>
+      <div id="shape"></div>
+    </section>
+    <section class="card">
+      <h2>2. Трети лица</h2>
+      <div id="thirds"></div>
+    </section>
+    <section class="card">
+      <h2>3. Дополнительные факты</h2>
+      <ul id="facts"></ul>
+    </section>
+    <section class="card">
+      <h2>4. Какие стрижки идут</h2>
+      <p class="muted">Нажми на название, чтобы посмотреть фото в интернете.</p>
+      <div id="styles" class="grid"></div>
+    </section>
+  </div>
+</main>
+
+<footer>Анализ делается в браузере (фото никуда не отправляется). Результаты — ориентировочные.</footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
+
